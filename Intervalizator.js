@@ -1,7 +1,8 @@
-const primaryRange = [0,3,4,5,8,9,10,11,15,18,19]
+const primaryRange = [0,3,4,8,9,10,5,11,15]
 
 function rangeToIntervals (range) {
 	let isInterval = false;
+	range=range.sort((a,b) => a-b);
 	let result = [];
 	let first = range[0];
 	for (i = 1; i <= range.length; i++) {
