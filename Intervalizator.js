@@ -10,16 +10,14 @@ function rangeToIntervals (range) {
 		if (cur-prev===1) {
 			isInterval = true;
 		}
+		else if (!isInterval) {
+			result.push(prev.toString());
+			first = cur;
+		}
 		else {
-			if (!isInterval) {
-				result.push(prev.toString());
-				first = cur;
-			}
-			else {
-				isInterval = false;
-				result.push(first.toString() + "-" + prev.toString());
-				first = cur;
-			}
+			isInterval = false;
+			result.push(first.toString() + "-" + prev.toString());
+			first = cur;
 		}
 	}	
 	return result.join(", ");
